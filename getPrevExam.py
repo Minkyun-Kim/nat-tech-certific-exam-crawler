@@ -2,22 +2,44 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
+def getPreviousExam(url, dir):
+
+    html_doc = requests.get(url)
+    soup = BeautifulSoup(html_doc.text, 'html.parser')
+    # located in subject board
+    for link in soup.find_all('a', {'class':'hx'}):
+        link = link.get('href')
+        html = requests.get(link)
+        parsed = BeautifulSoup(html.text, 'html.parser')
+        # located in specific test board to get download
+        for link2 in parsed.find_all('a', attrs={'class': 'bubble'}):
+            if ".hwp" in link2.get_text():
+                filename = link2.get_text()
+                downloadURL = link2.get('href')
+                if not os.path.isfile(dir + "/" + filename):
+                    print(filename + "파일을 다운로드 받습니다.")
+                    with open(dir + "/" + filename, "wb") as file:
+                        response = requests.get(downloadURL)
+                        file.write(response.content)
+                else:
+                    print(filename + "이 이미 존재합니다.")
+
+
+def run():
+    url = "https://www.comcbt.com"
+    html = requests.get(url)
+    soup = BeautifulSoup(html.text, 'html.parser')
+    table = soup.find('table', attrs={'bgcolor': '#C0C0C0'})
+    subject = input()
+    print(subject + "과목을 찾는 중입니다.")
+    for subjectString in table.find_all('a'):
+        if subject in subjectString.get_text():
+            dir = subjectString.get_text()
+            print(dir + "과목을 찾았습니다.")
+            if not (os.path.isdir(dir)):
+                os.makedirs(os.path.join(dir))
+            getPreviousExam("https://" + subjectString.get('href')[2:], dir)
+
 
 if __name__ == '__main__':
-    urls = ["https://www.comcbt.com/xe/j4","https://www.comcbt.com/xe/index.php?mid=j4&page=2","https://www.comcbt.com/xe/index.php?mid=j4&page=3"]
-    if not (os.path.isdir("기출")):
-        os.makedirs(os.path.join("기출"))
-    for url in urls:
-        html_doc = requests.get(url)
-        soup = BeautifulSoup(html_doc.text, 'html.parser')
-        for link in soup.find_all('a', {'class':'hx'}):
-            link = link.get('href')
-            html = requests.get(link)
-            parsed = BeautifulSoup(html.text, 'html.parser')
-            for link2 in parsed.find_all('a'):
-                if ".hwp" in link2.get_text():
-                    filename = link2.get_text()
-                    path = link2.get('href')
-                    with open("기출/" + filename, "wb") as file:
-                        response = requests.get(path)
-                        file.write(response.content)
+    run()
