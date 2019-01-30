@@ -3,26 +3,36 @@ import requests
 from bs4 import BeautifulSoup
 
 def getPreviousExam(url, dir):
-
-    html_doc = requests.get(url)
-    soup = BeautifulSoup(html_doc.text, 'html.parser')
-    # located in subject board
-    for link in soup.find_all('a', {'class':'hx'}):
-        link = link.get('href')
-        html = requests.get(link)
-        parsed = BeautifulSoup(html.text, 'html.parser')
-        # located in specific test board to get download
-        for link2 in parsed.find_all('a', attrs={'class': 'bubble'}):
-            if ".hwp" in link2.get_text():
-                filename = link2.get_text()
-                downloadURL = link2.get('href')
-                if not os.path.isfile(dir + "/" + filename):
-                    print(filename + "파일을 다운로드 받습니다.")
-                    with open(dir + "/" + filename, "wb") as file:
-                        response = requests.get(downloadURL)
-                        file.write(response.content)
-                else:
-                    print(filename + "이 이미 존재합니다.")
+    while 1:
+        html_doc = requests.get(url)
+        soup = BeautifulSoup(html_doc.text, 'html.parser')
+        # located in subject board
+        for link in soup.find_all('a', {'class':'hx'}):
+            link = link.get('href')
+            html = requests.get(link)
+            parsed = BeautifulSoup(html.text, 'html.parser')
+            # located in specific test board to get download
+            for link2 in parsed.find_all('a', attrs={'class': 'bubble'}):
+                if ".hwp"in link2.get_text() or "pdf" in link2.get_text():
+                    filename = link2.get_text()
+                    downloadURL = link2.get('href')
+                    if not os.path.isfile(dir + "/" + filename):
+                        print(filename + "파일을 다운로드 받습니다.")
+                        with open(dir + "/" + filename, "wb") as file:
+                            response = requests.get(downloadURL)
+                            file.write(response.content)
+                    else:
+                        print(filename + "이 이미 존재합니다.")
+        soup1 = soup.find('fieldset').find_all('a', attrs={'class': 'direction'})
+        print(soup1)
+        if soup1[0].get_text() != "Next ":
+            if len(soup1) != 1:
+                url = soup1[1].get('href')
+            else :
+                return
+        else:
+            url = soup1[0].get('href')
+        print(url)
 
 
 def run():
