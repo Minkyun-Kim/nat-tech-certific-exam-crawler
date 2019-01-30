@@ -24,7 +24,6 @@ def getPreviousExam(url, dir):
                     else:
                         print(filename + "이 이미 존재합니다.")
         soup1 = soup.find('fieldset').find_all('a', attrs={'class': 'direction'})
-        print(soup1)
         if soup1[0].get_text() != "Next ":
             if len(soup1) != 1:
                 url = soup1[1].get('href')
@@ -49,7 +48,7 @@ def run():
             if not (os.path.isdir(dir)):
                 os.makedirs(os.path.join(dir))
             getPreviousExam("https://" + subjectString.get('href')[2:], dir)
-
+    print("다운로드가 완료 되었습니다.")
 
 if __name__ == '__main__':
     run()
