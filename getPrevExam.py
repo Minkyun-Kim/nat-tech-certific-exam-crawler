@@ -31,7 +31,6 @@ def getPreviousExam(url, dir):
                 return
         else:
             url = soup1[0].get('href')
-        print(url)
 
 
 def run():
@@ -39,12 +38,23 @@ def run():
     html = requests.get(url)
     soup = BeautifulSoup(html.text, 'html.parser')
     table = soup.find('table', attrs={'bgcolor': '#C0C0C0'})
+    print("////////////////////////////////////////////////////////////////////////")
+    print("////                                                                ////")
+    print("////             국 가  시 험  기 출  문 제  다 운 로 드            ////")
+    print("////     기능사 / 산업기사 / 기사 / 수능 / ERP / FAT / TAT / 9급    ////")
+    print("////                                                                ////")
+    print("////////////////////////////////////////////////////////////////////////")
+    print("")
+    print("과목명을 입력해주세요 : ", end = '')
     subject = input()
+    print("")
     print(subject + "과목을 찾는 중입니다.")
+    print("")
     for subjectString in table.find_all('a'):
         if subject in subjectString.get_text():
             dir = subjectString.get_text()
             print(dir + "과목을 찾았습니다.")
+            print("")
             if not (os.path.isdir(dir)):
                 os.makedirs(os.path.join(dir))
             getPreviousExam("https://" + subjectString.get('href')[2:], dir)
