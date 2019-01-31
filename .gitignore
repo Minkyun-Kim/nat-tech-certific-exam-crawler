@@ -2,4 +2,6 @@ venv
 *.hwp
 *.pdf
 *.spec
-.idea/workspace.xml
+.idea
+*.spec
+build

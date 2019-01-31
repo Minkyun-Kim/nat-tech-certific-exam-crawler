@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ac705cf-0827-447d-bc53-dbeea7a6b53a" name="Default Changelist" comment="Added graphic factor">
+    <list default="true" id="7ac705cf-0827-447d-bc53-dbeea7a6b53a" name="Default Changelist" comment="Added graphic factor2">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getPrevExam.py" beforeDir="false" afterPath="$PROJECT_DIR$/getPrevExam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/warn-getPrevExam.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/warn-getPrevExam.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/getPrevExam/xref-getPrevExam.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/getPrevExam/xref-getPrevExam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/getPrevExam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/getPrevExam.exe" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="venv/" />
@@ -34,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -78,11 +87,6 @@
             <path>
               <item name="nat-tech-certific-exam-crawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="nat-tech-certific-exam-crawler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nat-tech-certific-exam-crawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nat-tech-certific-exam-crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,14 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1548906987340</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added graphic factor2">
+      <created>1548910403698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1548910403698</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="2067" y="19" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -299,8 +310,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32822758" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3274918" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -353,7 +364,8 @@
     <MESSAGE value="First simple previous exam questions crawler" />
     <MESSAGE value="Search func addded&#10;Can download first page of exam" />
     <MESSAGE value="Added graphic factor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added graphic factor" />
+    <MESSAGE value="Added graphic factor2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added graphic factor2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bs4/__init__.py" />
@@ -369,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
