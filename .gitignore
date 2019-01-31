@@ -2,3 +2,4 @@ venv
 *.hwp
 *.pdf
 *.spec
+.idea/workspace.xml
