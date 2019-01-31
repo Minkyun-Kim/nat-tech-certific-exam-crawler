@@ -4,4 +4,4 @@ venv
 *.spec
 .idea
 *.spec
-build
+build/*
